@@ -6,7 +6,7 @@
     <title>ARIX Electronics | Total EMS Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='Source/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='static/Source/logo.png') }}">
     <style>
         /* ========== METAL & GREEN THEME: White, Green, Black, Silver, Metal ========== */
         :root {
@@ -154,7 +154,7 @@
         /* Hero Section */
         .hero-section {
             padding: 140px 0 100px;
-            background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url(/static/Source/background.png) center/cover fixed;
+            background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url(/static/static/Source/background.png) center/cover fixed;
             position: relative;
             min-height: 100vh;
             display: flex;
@@ -391,7 +391,7 @@
 
         /* Company Section (dark overlay) */
         .company-section {
-            background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url(/static/Source/background.png) center/cover fixed;
+            background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url(/static/static/Source/background.png) center/cover fixed;
             color: white;
         }
         .company-section .section-title, .company-section .section-label { color: white; }
@@ -689,7 +689,7 @@
     <nav class="main-nav">
         <div class="container">
             <div class="nav-container">
-                <a href="#" class="brand"><div class="brand-icon"><img src="/static/Source/arix.png" alt="ARIX Electronics"></div></a>
+                <a href="#" class="brand"><div class="brand-icon"><img src="/static/static/Source/arix.png" alt="ARIX Electronics"></div></a>
                 <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home" class="nav-link active">Home</a></li>
@@ -770,9 +770,9 @@
             <div class="section-header"><div class="section-label">OUR SERVICES</div><h2 class="display-2 section-title">Core Capabilities</h2></div>
             <div class="services-carousel">
                 <div class="slideshow-container" id="servicesSlideshow">
-                    <div class="slideshow-slide active"><div class="slide-image"><img src="Source/PCB_product.jpg" alt="PCB Assembly" onerror="this.src='https://placehold.co/600x400?text=PCB+Assembly'"></div><div class="slide-content"><h3>PCB Assembly</h3><p>End‑to‑end electronics manufacturing: design, programming, SMT/through‑hole, testing, packaging.</p><ul class="services-features"><li><i class="fas fa-check"></i> Design & Programming</li><li><i class="fas fa-check"></i> Setup & Production</li><li><i class="fas fa-check"></i> Functional Testing & Packaging</li></ul></div></div>
-                    <div class="slideshow-slide"><div class="slide-image"><img src="Source/stencil.jpg" alt="Stencil" onerror="this.src='https://placehold.co/600x400?text=Stencil+Fabrication'"></div><div class="slide-content"><h3>Stencil Fabrication</h3><p>Precision laser‑cut stencils for solder paste printing. Design, setup, and build services.</p><ul class="services-features"><li><i class="fas fa-check"></i> Custom Aperture Design</li><li><i class="fas fa-check"></i> Laser Cutting & Electroforming</li><li><i class="fas fa-check"></i> Frame Mounting & Inspection</li></ul></div></div>
-                    <div class="slideshow-slide"><div class="slide-image"><img src="Source/JIG.jpg" alt="Jigs & Fixtures" onerror="this.src='https://placehold.co/600x400?text=Jigs+%26+Fixtures'"></div><div class="slide-content"><h3>Jigs & Fixtures Fabrication</h3><p>Custom test fixtures, assembly jigs, and handling tools to improve accuracy and throughput.</p><ul class="services-features"><li><i class="fas fa-check"></i> Functional Test Fixtures</li><li><i class="fas fa-check"></i> Assembly & Soldering Jigs</li><li><i class="fas fa-check"></i> CNC Machined & 3D Printed</li></ul></div></div>
+                    <div class="slideshow-slide active"><div class="slide-image"><img src="static/Source/PCB_product.jpg" alt="PCB Assembly" onerror="this.src='https://placehold.co/600x400?text=PCB+Assembly'"></div><div class="slide-content"><h3>PCB Assembly</h3><p>End‑to‑end electronics manufacturing: design, programming, SMT/through‑hole, testing, packaging.</p><ul class="services-features"><li><i class="fas fa-check"></i> Design & Programming</li><li><i class="fas fa-check"></i> Setup & Production</li><li><i class="fas fa-check"></i> Functional Testing & Packaging</li></ul></div></div>
+                    <div class="slideshow-slide"><div class="slide-image"><img src="static/Source/stencil.jpg" alt="Stencil" onerror="this.src='https://placehold.co/600x400?text=Stencil+Fabrication'"></div><div class="slide-content"><h3>Stencil Fabrication</h3><p>Precision laser‑cut stencils for solder paste printing. Design, setup, and build services.</p><ul class="services-features"><li><i class="fas fa-check"></i> Custom Aperture Design</li><li><i class="fas fa-check"></i> Laser Cutting & Electroforming</li><li><i class="fas fa-check"></i> Frame Mounting & Inspection</li></ul></div></div>
+                    <div class="slideshow-slide"><div class="slide-image"><img src="static/Source/JIG.jpg" alt="Jigs & Fixtures" onerror="this.src='https://placehold.co/600x400?text=Jigs+%26+Fixtures'"></div><div class="slide-content"><h3>Jigs & Fixtures Fabrication</h3><p>Custom test fixtures, assembly jigs, and handling tools to improve accuracy and throughput.</p><ul class="services-features"><li><i class="fas fa-check"></i> Functional Test Fixtures</li><li><i class="fas fa-check"></i> Assembly & Soldering Jigs</li><li><i class="fas fa-check"></i> CNC Machined & 3D Printed</li></ul></div></div>
                 </div>
                 <button class="carousel-btn prev" id="servicesPrev"><i class="fas fa-chevron-left"></i></button>
                 <button class="carousel-btn next" id="servicesNext"><i class="fas fa-chevron-right"></i></button>
@@ -834,9 +834,9 @@
                 <!-- Slide 1: SMT Assembly Line -->
                 <div class="production-slideshow-slide active">
                     <div class="production-slide-image">
-                        <video controls autoplay muted loop playsinline poster="Source/smt_poster.jpg">
-                            <source src="/static/Source/mounter.mp4" type="video/mp4">
-                            <img src="/static/Source/smt_fallback.jpg" alt="SMT Assembly Line" style="width:100%; height:100%; object-fit:cover;">
+                        <video controls autoplay muted loop playsinline poster="static/Source/smt_poster.jpg">
+                            <static/Source src="/static/static/Source/mounter.mp4" type="video/mp4">
+                            <img src="/static/static/Source/smt_fallback.jpg" alt="SMT Assembly Line" style="width:100%; height:100%; object-fit:cover;">
                         </video>
                     </div>
                     <div class="production-slide-content">
@@ -852,9 +852,9 @@
                 <!-- Slide 2: Stencil Fabrication -->
                 <div class="production-slideshow-slide">
                     <div class="production-slide-image">
-                        <video controls autoplay muted loop playsinline poster="/static/Source/stencil_poster.jpg">
-                            <source src="/static/Source/smt.mp4" type="video/mp4">
-                            <img src="/static/Source/stencil_fallback.jpg" alt="Stencil Fabrication" style="width:100%; height:100%; object-fit:cover;">
+                        <video controls autoplay muted loop playsinline poster="/static/static/Source/stencil_poster.jpg">
+                            <static/Source src="/static/static/Source/smt.mp4" type="video/mp4">
+                            <img src="/static/static/Source/stencil_fallback.jpg" alt="Stencil Fabrication" style="width:100%; height:100%; object-fit:cover;">
                         </video>
                     </div>
                     <div class="production-slide-content">
@@ -870,7 +870,7 @@
                 <!-- Slide 3: Jigs & Fixtures Workshop -->
                 <div class="production-slideshow-slide">
                     <div class="production-slide-image">
-                        <img src="/static/Source/fixture_workshop.jpg" alt="Fixture Workshop" onerror="this.src='https://placehold.co/600x400?text=Fixture+Workshop'">
+                        <img src="/static/static/Source/fixture_workshop.jpg" alt="Fixture Workshop" onerror="this.src='https://placehold.co/600x400?text=Fixture+Workshop'">
                     </div>
                     <div class="production-slide-content">
                         <h3>Jigs & Fixtures Workshop</h3>
@@ -885,9 +885,9 @@
                 <!-- Slide 4: Quality Assurance Lab -->
                 <div class="production-slideshow-slide">
                     <div class="production-slide-image">
-                        <video controls autoplay muted loop playsinline poster="/static/Source/quality_poster.jpg">
-                            <source src="/static/Source/quality_lab.mp4" type="video/mp4">
-                            <img src="Source/quality_fallback.jpg" alt="Quality Assurance Lab" style="width:100%; height:100%; object-fit:cover;">
+                        <video controls autoplay muted loop playsinline poster="/static/static/Source/quality_poster.jpg">
+                            <static/Source src="/static/static/Source/quality_lab.mp4" type="video/mp4">
+                            <img src="static/Source/quality_fallback.jpg" alt="Quality Assurance Lab" style="width:100%; height:100%; object-fit:cover;">
                         </video>
                     </div>
                     <div class="production-slide-content">
@@ -913,7 +913,7 @@
             <div class="section-header"><div class="section-label">MEDIA GALLERY</div><h2 class="display-2 section-title">Process in Action</h2></div>
             <div class="video-grid">
                 <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=placeholder" title="SMT Line" allowfullscreen></iframe></div><div class="video-caption">High‑Speed SMT Assembly</div></div>
-                <div class="video-card"><div class="video-wrapper"><video controls><source src="Source/aoi_demo.mp4" type="video/mp4">Your browser does not support video.</video></div><div class="video-caption">Automated Optical Inspection</div></div>
+                <div class="video-card"><div class="video-wrapper"><video controls><static/Source src="static/Source/aoi_demo.mp4" type="video/mp4">Your browser does not support video.</video></div><div class="video-caption">Automated Optical Inspection</div></div>
                 <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/3GwjfUFyY6M?si=example" title="Stencil Fab" allowfullscreen></iframe></div><div class="video-caption">Precision Stencil Fabrication</div></div>
             </div>
         </div>
@@ -958,7 +958,7 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand"><a href="#" class="brand"><div class="brand-icon"><img src="Source/arix.png" alt="ARIX"></div></a><p class="footer-tagline">Total EMS Solutions · PEZA Registered</p></div>
+                <div class="footer-brand"><a href="#" class="brand"><div class="brand-icon"><img src="static/Source/arix.png" alt="ARIX"></div></a><p class="footer-tagline">Total EMS Solutions · PEZA Registered</p></div>
                 <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#equipment">Equipment</a></li><li><a href="#assembly">Products</a></li><li><a href="#contact">Contact</a></li></ul></div>
                 <div class="footer-links"><h4>Capabilities</h4><ul><li><a href="#">PCB Assembly</a></li><li><a href="#">Stencil Fabrication</a></li><li><a href="#">Jigs & Fixtures</a></li></ul></div>
             </div>
