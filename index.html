@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>ARIX Electronics | Total EMS Solutions</title>
+    <title>ARIX Electronics001 | Total EMS Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='static/Source/logo.png') }}">
@@ -243,7 +243,6 @@
             transition: var(--transition);
             cursor: pointer;
             text-align: center;
-            
         }
         .visual-item:hover { background: rgba(255,255,255,0.18); transform: translateY(-5px); border-color: var(--primary-light); }
         .visual-icon {
@@ -601,6 +600,7 @@
             background: #111;
             color: #aaa;
             padding: 60px 0 30px;
+            position: relative;
         }
         .footer-grid {
             display: grid;
@@ -616,6 +616,80 @@
         .footer-links a { color: #aaa; text-decoration: none; transition: var(--transition); }
         .footer-links a:hover { color: var(--primary-light); padding-left: 5px; }
         .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid #2a2a2a; font-size: 0.85rem; }
+
+        /* ===== FLOATING COUNTDOWN (Footer) ===== */
+        .float-countdown {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(145deg, #1a2a2f, #0d1a1e);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(74, 175, 80, 0.5);
+            border-radius: 20px;
+            padding: 18px 22px;
+            z-index: 999;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+            color: #fff;
+            min-width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+        .float-countdown:hover {
+            transform: scale(1.02);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.9);
+            border-color: var(--primary-light);
+        }
+        .float-countdown .cd-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-light);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .float-countdown .cd-timer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .float-countdown .cd-timer > div {
+            background: rgba(255,255,255,0.06);
+            padding: 4px 6px;
+            border-radius: 8px;
+            min-width: 40px;
+        }
+        .float-countdown .cd-timer span {
+            font-size: 1.3rem;
+            color: #fff;
+            display: block;
+            line-height: 1.2;
+        }
+        .float-countdown .cd-timer .cd-label {
+            font-size: 0.5rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: #aaa;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+        @media (max-width: 600px) {
+            .float-countdown {
+                bottom: 16px;
+                right: 16px;
+                padding: 14px 16px;
+                min-width: 160px;
+            }
+            .float-countdown .cd-timer span {
+                font-size: 1rem;
+            }
+            .float-countdown .cd-timer > div {
+                min-width: 30px;
+                padding: 2px 4px;
+            }
+        }
 
         /* Map Modal */
         .map-modal {
@@ -699,7 +773,6 @@
                     <li><a href="#equipment" class="nav-link">Equipment</a></li>
                     <li><a href="#assembly" class="nav-link">Products</a></li>
                     <li><a href="#production" class="nav-link">Production</a></li>
-                 <!--   <li><a href="#video" class="nav-link">Media</a></li>-->
                     <li><a href="#vision" class="nav-link">Vision & Mission</a></li>
                     <li><a href="#contact" class="nav-btn">Contact us</a></li>
                 </ul>
@@ -729,15 +802,15 @@
                 </div>
                 <div class="hero-visual">
                     <div class="visual-grid">
-                       
-                          <img src="static/Source/opening.png" alt="Fixture Workshop" onerror="this.src='https://placehold.co/600x400?text=Fixture+Workshop'">
-               
-                        <!--
+                        <!-- opening.png image restored -->
+                        <div class="visual-item" style="grid-column: span 2; background: transparent; padding: 0;">
+                            <img src="static/Source/opening.png" alt="Grand Opening" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,0.2);">
+                        </div>
+                        <!-- original visual items -->
                         <div class="visual-item"><div class="visual-icon"><i class="fas fa-microchip"></i></div><h4>PCB Assembly</h4><p>Full turnkey solutions</p></div>
                         <div class="visual-item"><div class="visual-icon"><i class="fas fa-ruler-combined"></i></div><h4>Stencil Fabrication</h4><p>Precision stencils</p></div>
                         <div class="visual-item"><div class="visual-icon"><i class="fas fa-tools"></i></div><h4>Jigs & Fixtures</h4><p>Custom test fixtures</p></div>
                         <div class="visual-item"><div class="visual-icon"><i class="fas fa-chart-line"></i></div><h4>Design Support</h4><p>From concept to production</p></div>
-                        -->
                     </div>
                 </div>
             </div>
@@ -814,116 +887,95 @@
             </div>
             <div class="assembly-grid">
                 <div class="assembly-card"><div class="assembly-icon"><i class="fas fa-close"></i></div><h3>No Available products</h3></div>
-                <!--
-                <div class="assembly-card"><div class="assembly-icon"><i class="fas fa-car"></i></div><h3>Automotive Electronics</h3><p>ECU, sensor modules, lighting control, battery management systems.</p></div>
-                <div class="assembly-card"><div class="assembly-icon"><i class="fas fa-microphone"></i></div><h3>Consumer Electronics</h3><p>Smart home devices, wearables, IoT modules, audio equipment.</p></div>
-                <div class="assembly-card"><div class="assembly-icon"><i class="fas fa-industry"></i></div><h3>Industrial Control</h3><p>PLCs, motor drives, power supplies, instrumentation boards.</p></div>
-                <div class="assembly-card"><div class="assembly-icon"><i class="fas fa-heartbeat"></i></div><h3>Medical Devices</h3><p>Patient monitors, diagnostic equipment, portable medical electronics.</p></div>
-                <div class="assembly-card"><div class="assembly-icon"><i class="fas fa-wifi"></i></div><h3>Telecom & Networking</h3><p>Routers, switches, base station boards, RF modules.</p></div>
-                <div class="assembly-card"><div class="assembly-icon"><i class="fas fa-charging-station"></i></div><h3>Power Electronics</h3><p>Inverters, converters, battery chargers, power supplies.</p></div>
-            -->
             </div>
         </div>
     </section>
 
     <!-- Production Workshop (Carousel with video left / text right) -->
-   <!-- Replace your existing production section with this code -->
-
-<section id="production" class="production-carousel-section">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-label">OUR FACILITIES</div>
-            <h2 class="display-2 section-title">Production Workshop</h2>
-        </div>
-        <div class="production-carousel">
-            <div class="production-slideshow-container" id="productionSlideshow">
-                <!-- Slide 1: SMT Assembly Line -->
-                <div class="production-slideshow-slide active">
-                    <div class="production-slide-image">
-                        <video controls autoplay muted loop playsinline poster="static/Source/smt_poster.jpg">
-                            <static/Source src="/static/static/Source/mounter.mp4" type="video/mp4">
-                            <img src="/static/static/Source/smt_fallback.jpg" alt="SMT Assembly Line" style="width:100%; height:100%; object-fit:cover;">
-                        </video>
-                    </div>
-                    <div class="production-slide-content">
-                        <h3>SMT Assembly Line</h3>
-                        <p>Fully automated high‑speed placement, reflow, and AOI.</p>
-                        <ul class="production-features-list">
-                            <li><i class="fas fa-check"></i> 0201 component support</li>
-                            <li><i class="fas fa-check"></i> Lead‑free & leaded process</li>
-                            <li><i class="fas fa-check"></i> High‑mix, high‑volume capability</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Slide 2: Stencil Fabrication -->
-                <div class="production-slideshow-slide">
-                    <div class="production-slide-image">
-                        <video controls autoplay muted loop playsinline poster="/static/static/Source/stencil_poster.jpg">
-                            <static/Source src="/static/static/Source/smt.mp4" type="video/mp4">
-                            <img src="/static/static/Source/stencil_fallback.jpg" alt="Stencil Fabrication" style="width:100%; height:100%; object-fit:cover;">
-                        </video>
-                    </div>
-                    <div class="production-slide-content">
-                        <h3>Stencil Fabrication</h3>
-                        <p>Laser cutting, electro‑polishing, and frame tensioning.</p>
-                        <ul class="production-features-list">
-                            <li><i class="fas fa-check"></i> 24‑hour prototypes</li>
-                            <li><i class="fas fa-check"></i> Gerber‑to‑stencil workflow</li>
-                            <li><i class="fas fa-check"></i> Step stencils & nano‑coating options</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Slide 3: Jigs & Fixtures Workshop -->
-                <div class="production-slideshow-slide">
-                    <div class="production-slide-image">
-                        <img src="/static/static/Source/fixture_workshop.jpg" alt="Fixture Workshop" onerror="this.src='https://placehold.co/600x400?text=Fixture+Workshop'">
-                    </div>
-                    <div class="production-slide-content">
-                        <h3>Jigs & Fixtures Workshop</h3>
-                        <p>CNC machining, 3D printing, and assembly for custom test solutions.</p>
-                        <ul class="production-features-list">
-                            <li><i class="fas fa-check"></i> In‑house design</li>
-                            <li><i class="fas fa-check"></i> Rapid iteration</li>
-                            <li><i class="fas fa-check"></i> Functional Test & Assembly Jigs</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Slide 4: Quality Assurance Lab -->
-                <div class="production-slideshow-slide">
-                    <div class="production-slide-image">
-                        <video controls autoplay muted loop playsinline poster="/static/static/Source/quality_poster.jpg">
-                            <static/Source src="/static/static/Source/quality_lab.mp4" type="video/mp4">
-                            <img src="static/Source/quality_fallback.jpg" alt="Quality Assurance Lab" style="width:100%; height:100%; object-fit:cover;">
-                        </video>
-                    </div>
-                    <div class="production-slide-content">
-                        <h3>Quality Assurance Lab</h3>
-                        <p>AOI, X‑ray, functional test, environmental chambers.</p>
-                        <ul class="production-features-list">
-                            <li><i class="fas fa-check"></i> IPC‑A‑610 certified</li>
-                            <li><i class="fas fa-check"></i> Full traceability</li>
-                            <li><i class="fas fa-check"></i> Environmental & stress testing</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-btn prev" id="productionPrev"><i class="fas fa-chevron-left"></i></button>
-            <button class="carousel-btn next" id="productionNext"><i class="fas fa-chevron-right"></i></button>
-            <div class="carousel-nav" id="productionDots"></div>
-        </div>
-    </div>
-</section>
-    <!-- Video Showcase 
-    <section id="video" class="video-showcase">
+    <section id="production" class="production-carousel-section">
         <div class="container">
-            <div class="section-header"><div class="section-label">MEDIA GALLERY</div><h2 class="display-2 section-title">Process in Action</h2></div>
-            <div class="video-grid">
-                <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=placeholder" title="SMT Line" allowfullscreen></iframe></div><div class="video-caption">High‑Speed SMT Assembly</div></div>
-                <div class="video-card"><div class="video-wrapper"><video controls><static/Source src="static/Source/aoi_demo.mp4" type="video/mp4">Your browser does not support video.</video></div><div class="video-caption">Automated Optical Inspection</div></div>
-                <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/3GwjfUFyY6M?si=example" title="Stencil Fab" allowfullscreen></iframe></div><div class="video-caption">Precision Stencil Fabrication</div></div>
+            <div class="section-header">
+                <div class="section-label">OUR FACILITIES</div>
+                <h2 class="display-2 section-title">Production Workshop</h2>
+            </div>
+            <div class="production-carousel">
+                <div class="production-slideshow-container" id="productionSlideshow">
+                    <!-- Slide 1: SMT Assembly Line -->
+                    <div class="production-slideshow-slide active">
+                        <div class="production-slide-image">
+                            <video controls autoplay muted loop playsinline poster="static/Source/smt_poster.jpg">
+                                <source src="/static/static/Source/mounter.mp4" type="video/mp4">
+                                <img src="/static/static/Source/smt_fallback.jpg" alt="SMT Assembly Line" style="width:100%; height:100%; object-fit:cover;">
+                            </video>
+                        </div>
+                        <div class="production-slide-content">
+                            <h3>SMT Assembly Line</h3>
+                            <p>Fully automated high‑speed placement, reflow, and AOI.</p>
+                            <ul class="production-features-list">
+                                <li><i class="fas fa-check"></i> 0201 component support</li>
+                                <li><i class="fas fa-check"></i> Lead‑free & leaded process</li>
+                                <li><i class="fas fa-check"></i> High‑mix, high‑volume capability</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Stencil Fabrication -->
+                    <div class="production-slideshow-slide">
+                        <div class="production-slide-image">
+                            <video controls autoplay muted loop playsinline poster="/static/static/Source/stencil_poster.jpg">
+                                <source src="/static/static/Source/smt.mp4" type="video/mp4">
+                                <img src="/static/static/Source/stencil_fallback.jpg" alt="Stencil Fabrication" style="width:100%; height:100%; object-fit:cover;">
+                            </video>
+                        </div>
+                        <div class="production-slide-content">
+                            <h3>Stencil Fabrication</h3>
+                            <p>Laser cutting, electro‑polishing, and frame tensioning.</p>
+                            <ul class="production-features-list">
+                                <li><i class="fas fa-check"></i> 24‑hour prototypes</li>
+                                <li><i class="fas fa-check"></i> Gerber‑to‑stencil workflow</li>
+                                <li><i class="fas fa-check"></i> Step stencils & nano‑coating options</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Jigs & Fixtures Workshop -->
+                    <div class="production-slideshow-slide">
+                        <div class="production-slide-image">
+                            <img src="/static/static/Source/fixture_workshop.jpg" alt="Fixture Workshop" onerror="this.src='https://placehold.co/600x400?text=Fixture+Workshop'">
+                        </div>
+                        <div class="production-slide-content">
+                            <h3>Jigs & Fixtures Workshop</h3>
+                            <p>CNC machining, 3D printing, and assembly for custom test solutions.</p>
+                            <ul class="production-features-list">
+                                <li><i class="fas fa-check"></i> In‑house design</li>
+                                <li><i class="fas fa-check"></i> Rapid iteration</li>
+                                <li><i class="fas fa-check"></i> Functional Test & Assembly Jigs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Quality Assurance Lab -->
+                    <div class="production-slideshow-slide">
+                        <div class="production-slide-image">
+                            <video controls autoplay muted loop playsinline poster="/static/static/Source/quality_poster.jpg">
+                                <source src="/static/static/Source/quality_lab.mp4" type="video/mp4">
+                                <img src="static/Source/quality_fallback.jpg" alt="Quality Assurance Lab" style="width:100%; height:100%; object-fit:cover;">
+                            </video>
+                        </div>
+                        <div class="production-slide-content">
+                            <h3>Quality Assurance Lab</h3>
+                            <p>AOI, X‑ray, functional test, environmental chambers.</p>
+                            <ul class="production-features-list">
+                                <li><i class="fas fa-check"></i> IPC‑A‑610 certified</li>
+                                <li><i class="fas fa-check"></i> Full traceability</li>
+                                <li><i class="fas fa-check"></i> Environmental & stress testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" id="productionPrev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next" id="productionNext"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-nav" id="productionDots"></div>
             </div>
         </div>
-    </section>-->
+    </section>
 
     <!-- Vision, Mission, Values (from PDF) -->
     <section id="vision" class="vision-mission-section">
@@ -972,6 +1024,18 @@
         </div>
     </footer>
 
+    <!-- ========== FLOATING COUNTDOWN (Footer) ========== -->
+    <div class="float-countdown" id="countdownFloat">
+        <div class="cd-title">🎉 Grand Opening</div>
+        <div class="cd-timer">
+            <div><span id="cdDays">00</span><span class="cd-label">Days</span></div>
+            <div><span id="cdHours">00</span><span class="cd-label">Hrs</span></div>
+            <div><span id="cdMinutes">00</span><span class="cd-label">Min</span></div>
+            <div><span id="cdSeconds">00</span><span class="cd-label">Sec</span></div>
+        </div>
+        <div style="font-size:0.6rem; margin-top:6px; color:#aaa; letter-spacing:0.5px;">August 14, 2026</div>
+    </div>
+
     <!-- Map Modal -->
     <div class="map-modal" id="mapModal">
         <div class="map-modal-content">
@@ -1011,7 +1075,6 @@
                 if(prevButton) prevButton.addEventListener('click',()=>showSlide(current-1));
                 if(nextButton) nextButton.addEventListener('click',()=>showSlide(current+1));
                 
-                // Auto‑slide with pause on hover
                 let interval = setInterval(()=>showSlide(current+1), intervalTime);
                 const container = document.querySelector(`.${slidesClass.split('.')[1]}`)?.closest('.production-carousel, .services-carousel, .products-carousel');
                 if(container) {
@@ -1046,6 +1109,26 @@
                     }
                 });
             });
+
+            // ========== FLOATING COUNTDOWN (Grand Opening: Aug 14, 2026) ==========
+            function updateCountdown() {
+                const target = new Date('2026-08-14T00:00:00').getTime();
+                const now = new Date().getTime();
+                let diff = target - now;
+                if (diff < 0) diff = 0;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('cdDays').textContent = String(days).padStart(2, '0');
+                document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cdMinutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('cdSeconds').textContent = String(seconds).padStart(2, '0');
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         });
     </script>
 </body>
